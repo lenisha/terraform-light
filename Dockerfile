@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ubuntu:16.04
 
 # Build-time metadata as defined at http://label-schema.org
 
