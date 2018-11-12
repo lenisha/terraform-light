@@ -9,7 +9,8 @@ LABEL org.label-schema.name="Terraform Light tool" \
                 
 ENV TERRAFORM_VERSION 0.11.10
 
-RUN apk add --update wget bash openssh
+RUN apt-get update \
+ && apt-get install -y wget
 
 # Install Terraform
 RUN echo "===> Installing Terraform ${TERRAFORM_VERSION}..." \
