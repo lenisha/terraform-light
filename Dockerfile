@@ -10,7 +10,7 @@ LABEL org.label-schema.name="Terraform Light tool" \
 ENV TERRAFORM_VERSION 0.11.10
 
 RUN apt-get update \
- && apt-get install -y wget unzip lsb-release curl
+ && apt-get install -y wget unzip lsb-release curl apt-transport-https
 
 # Install Terraform
 RUN echo "===> Installing Terraform ${TERRAFORM_VERSION}..." \
@@ -25,7 +25,6 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
  && curl -L https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
  && apt-get update \
  && apt-get install -y --no-install-recommends \
-    apt-transport-https \
     azure-cli \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /etc/apt/sources.list.d/* \
