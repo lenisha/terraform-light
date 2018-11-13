@@ -10,7 +10,7 @@ LABEL org.label-schema.name="Terraform Light tool" \
 ENV TERRAFORM_VERSION 0.11.10
 
 RUN apt-get update \
- && apt-get install -y wget unzip
+ && apt-get install -y wget unzip lsb-release curl
 
 # Install Terraform
 RUN echo "===> Installing Terraform ${TERRAFORM_VERSION}..." \
@@ -30,11 +30,3 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /etc/apt/sources.list.d/* \
  && az --version
-
-# Install AzCopy (depends on .NET Core)
-RUN apt-key adv --keyserver packages.microsoft.com --recv-keys EB3E94ADBE1229CF \
- && echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod/ xenial main" | tee /etc/apt/sources.list.d/azure.list \
- && apt-get update \
- && apt-get install -y --no-install-recommends azcopy \
- && rm -rf /var/lib/apt/lists/* \
- && rm -rf /etc/apt/sources.list.d/*
