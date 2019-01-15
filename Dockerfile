@@ -7,7 +7,7 @@ LABEL org.label-schema.name="Terraform Light tool" \
     org.label-schema.vcs-url="https://github.com/lenisha/terraform-light" \
     org.label-schema.schema-version="1.0"
                 
-ENV TERRAFORM_VERSION 0.11.10
+ENV TERRAFORM_VERSION 0.11.11
 
 RUN apt-get update \
  && apt-get install -y wget unzip lsb-release curl apt-transport-https

@@ -5,4 +5,4 @@
 
 Light image with Terraform client to be used in Azure pielines builds
 
-TERRAFOM_VERSION = 0.11.10
+TERRAFORM_VERSION = 0.11.11
