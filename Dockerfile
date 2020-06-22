@@ -30,4 +30,4 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
  && rm -rf /etc/apt/sources.list.d/* \
  && az --version
  
- RUN az extension add --name storage-preview
+ 
